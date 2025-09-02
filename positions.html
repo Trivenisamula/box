@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR Architects</title>
+    <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .navbar {
+        background-color: white;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    .navbar a {
+        display: inline-block;
+        padding: 8px 16px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+    .navbar a.logo {
+        font-weight: bolder;
+    }
+    .navbar a:hover {
+        background-color: #f0f0f0;
+    }
+    /* Hero Section */
+.hero {
+  background-image: url('https://www.w3schools.com/w3images/architect.jpg');
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  position: relative;
+}
+.hero h1 {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px;
+  font-size: 36px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 4px;
+}
+/* Projects Section */
+.projects {
+  padding: 60px 20px;
+}
+.projects h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.project-box {
+  text-align: center;
+}
+.project {
+  display: inline-block;
+  width: 45%;
+  margin: 10px;
+  position: relative;
+}
+.project img {
+  width: 100%;
+  height: auto;
+}
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+/* About Section */
+.about {
+  padding: 60px 20px;
+}
+.about h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.about p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+.team-box {
+  text-align: center;
+}
+.team-member {
+  display: inline-block;
+  width: 22%;
+  margin: 10px;
+  text-align: left;
+  vertical-align: top;
+  background-color: #f9f9f9;
+  padding: 20px 10px;
+}
+.team-member img {
+  width: 100%;
+  height: auto;
+}
+.team-member h3 {
+  margin: 10px 0 5px;
+}
+.team-member .role {
+  color: white;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.team-member p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.contact-btn {
+  background-color: #0c0000;
+  border: none;
+  padding: 12px 0;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+}
+.contact-btn:hover {
+  background-color: black;
+}
+.footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+.footer a {
+  color: white;
+  text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="logo">BR Architects</a>
+        <a href="#Projects">Projects</a>
+        <a href="#About">About</a>
+        <a href="#Contact">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+<div class="hero">
+  <h1><b>BR</b> Architects</h1>
+</div>
+
+<!-- Projects Section -->
+<div class="projects">
+  <h2>Projects</h2>
+
+  <div class="project-box">
+    <div class="project">
+      <span class="label">Summer House</span>
+      <img src="https://www.w3schools.com/w3images/house5.jpg" alt="Summer House">
+    </div>
+
+    <div class="project">
+      <span class="label">Brick House</span>
+      <img src="https://www.w3schools.com/w3images/house2.jpg" alt="Brick House">
+    </div>
+
+    <div class="project">
+      <span class="label">Renovated</span>
+      <img src="https://www.w3schools.com/w3images/house3.jpg" alt="Renovated">
+    </div>
+
+    <div class="project">
+      <span class="label">Barn House</span>
+      <img src="https://www.w3schools.com/w3images/house4.jpg" alt="Barn House">
+    </div>
+  </div>
+</div>
+
+<!-- About Section -->
+<div class="about" id="about">
+  <h2>About</h2>
+  <p>We are a team of passionate architects with expertise in modern and sustainable design. Our mission is to bring your ideas to life through creativity and precision.</p>
+
+  <div class="team-box">
+    <div class="team-member">
+      <img src="https://www.w3schools.com/w3images/team2.jpg" alt="John">
+      <h3>John Doe</h3>
+      <p class="role">CEO & Founder</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <button class="contact-button">Contact</button>
+    </div>
+
+    <div class="team-member">
+      <img src="https://www.w3schools.com/w3images/team1.jpg" alt="Jane">
+      <h3>Jane Doe</h3>
+      <p class="role">Architect</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <button class="contact-button">Contact</button>
+    </div>
+
+    <div class="team-member">
+      <img src="https://www.w3schools.com/w3images/team3.jpg" alt="Mike">
+      <h3>Mike Ross</h3>
+      <p class="role">Architect</p>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <button class="contact-button">Contact</button>
+    </div>
+
+    <div class="team-member">
+      <img src="https://www.w3schools.com/w3images/team4.jpg" alt="Dan">
+      <h3>Dan Star</h3>
+      <p class="role">Architect</p>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <button class="contact-button">Contact</button>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="contact" id="contact">
+  <h2>Contact</h2>
+  <p>Let’s get in touch and talk about your next project.</p>
+
+  <form class="contact-form">
+    <input type="text" placeholder="Name" required><br>
+    <input type="email" placeholder="Email" required><br>
+    <input type="text" placeholder="Subject" required><br>
+    <textarea placeholder="Comment" rows="2" required></textarea><br>
+    <button type="submit">SEND MESSAGE</button>
+  </form>
+</div>
+
+<!-- Footer Section -->
+<div class="footer">
+  <img src="https://www.w3schools.com/w3images/map.jpg" alt="">
+  <p>Powered by w3.css</p>
+</div>
+</body>
+</html>
