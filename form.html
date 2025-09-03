@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset style="width:900px;">
+        <legend>Applicant Details</legend>
+        <form>
+            <label>Name<font color="red">*</font></label>
+            <input type="text" pattern="[A-Z][a-z]+[0-9]+{20}" title="Minimam characters:20" required>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Father's/Guardian's Name<font color="red">*&nbsp;&nbsp;</font></label>
+            <input type="text" required><br><br>
+            <label>Date of Birth<font color="red">*</font></label>
+            <input type="text" required>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Gender<font color="red">*</font></label>
+            <input type="radio" name="Gender" required>Female &nbsp;
+            <input type="radio" name="Gender" required>Male 
+            <br><br>
+            <label>Age As On:</label>
+            <input type="text" size="1"><label>Year(s)</label>
+            <input type="text" size="1"><label>Month(s)</label>
+            <input type="text" size="1"><label>Day(s)</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Aadhaar No<font color="red">*</font></label>
+            <input type="text" required><br><br>
+            <label>WhatsApp No<font color="red">*</font></label>
+            <input type="text" required>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Email-Id<font color="red">*</font></label>
+            <input type="email" pattern="[a-z]+[0-9!#$%^&*]+@gmail.com" required>
+             &nbsp;&nbsp;&nbsp;&nbsp;
+             <label>Photo<font color="red">*</font></label>
+            <input type="file" required>
+        </form>
+    </fieldset>
+    <fieldset style="width:900px;">
+        <legend><label>Residential Address Details</label></legend>
+        <label>Applicant's Address<font color="red">*</font></label>
+        <textarea name="add" height="70" width="30" required></textarea>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <label>District<font color="red">*</font></label>
+        <select required>
+            <option value="Hyderabab">Hyderabad</option>
+        </select>
+        <br><br>
+        <label>Mandal<font color="red">*</font></label>
+        <select required>
+            <option value="Hyderabab">Hyderabad</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <label>Village<font color="red">*</font></label>
+        <select required>
+            <option value="Hyderabab">Hyderabad</option>
+            <option value="Hyderabab">Hyderabad</option>
+        </select>
+        <br><br>
+        <label>Pincode<font color="red">*</font></label>
+        <input type="text" pattern="[0-9]+{6}" required>
+    </fieldset>
+    <fieldset style="width:900px;">
+        <legend>Pass Type Details</legend>
+        <form>
+        <label>City<font color="red">*</font></label>
+        <select required>
+            <option value="Hyderabab" >Hyderabad</option>
+        </select> 
+        <br><br>
+        <label>Pass Type<font color="red">*</font></label>
+        <select required>
+            <option value="---Select---">---select----</option>
+            <option>Greater Pass</option>
+            <option>General Ordinary Route Pass MTLY</option>
+            <option>General Metro Express Route Pass MTLY</option>
+            <option>Ordinary Pass</option>
+            <option>Metro express Pass</option>
+            <option>Metro Delux Pass</option>
+        </select> 
+        </form>
+    </fieldset>
+    <fieldset style="width:900px;">
+        <legend>Mode of Payment & Pass Collection</legend>
+        <form>
+        <label>Payment Mode<font color="red">*</font></label>
+        <select required>
+            <option value="Select Payment Mode">select Payment Mode</option>
+            <option>Payment At Counter</option>
+        </select> 
+        <br><br>
+          <label>Pass Delivery Mode<font color="red">*</font></label>
+        <select required>
+            <option value="Select Pass Delivery Mode">select Pass Delivery Mode</option>
+            <option>At Counter</option>
+        </select> 
+        <br><br> 
+        <label>Center at which you want to collect<font color="red">*</font></label>
+        <select required>
+            <option value="---Select---">---select---</option>
+            <option>RTC ABIDS---HYD[03/07/2025]</option>
+            <option>RTC AIRPORT---HYD[03/07/2025]</option>
+            <option>RTC BALANAGAR---HYD[03/07/2025]</option>
+        </select>  
+        </form>
+    </fieldset>
+    <form>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" value="submit">
+    </form>
+</body>
+</html>

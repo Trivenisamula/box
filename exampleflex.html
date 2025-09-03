@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catering Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      line-height: 1.6;
+      color: rgb(48, 47, 47);
+    }
+
+    /* Navbar */
+    .nav {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .nav2 nav {
+      display: flex;
+      gap: 30px;
+    }
+    h4 {
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: 0.1em;
+      font-weight: 400;
+      cursor: pointer;
+    }
+    h4:hover {
+      color: tomato;
+    }
+
+    /* Hero */
+    .position {
+      position: relative;
+    }
+    .position > img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .absolute {
+      position: absolute;
+      bottom: 20px;
+      left: 30px;
+      font-size: 40px;
+      font-weight: 200;
+      letter-spacing: 0.1em;
+      color: rgb(92, 91, 91);
+      background: rgba(255,255,255,0.7);
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+
+    /* About Section */
+    .parent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 60px 10%;
+      flex-wrap: wrap;
+    }
+    .sub1 img {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .sub2 {
+      max-width: 500px;
+    }
+    .sub2 h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .sub2 h4 {
+      font-size: 18px;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+    .sub2 p {
+      text-align: justify;
+      margin-bottom: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        padding: 10px 20px;
+      }
+      .nav2 nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .absolute {
+        font-size: 28px;
+        left: 15px;
+        bottom: 15px;
+      }
+      .parent {
+        padding: 40px 20px;
+        text-align: center;
+      }
+      .sub2 {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="nav">
+    <div class="nav1">
+      <h4>Gourment au Catering</h4>
+    </div>
+    <div class="nav2">
+      <nav>
+        <h4>About</h4>
+        <h4>Menu</h4>
+        <h4>Contact</h4>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="position">
+    <img src="https://www.w3schools.com/w3images/hamburger.jpg" alt="Burger">
+    <div class="absolute">Le Catering</div>
+  </div>
+
+  <!-- About -->
+  <div class="parent">
+    <div class="sub1">
+      <img src="https://www.w3schools.com/w3images/tablesetting2.jpg" alt="Table Setting">
+    </div>
+    <div class="sub2">
+      <h1>About Catering</h1>
+      <h4>Tradition since 1889</h4>
+      <p>The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. We only use seasonal ingredients.</p>
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+
+</body>
+</html>

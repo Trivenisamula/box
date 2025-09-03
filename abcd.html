@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <style>
+        header{
+            margin: 0%; 
+            color: aliceblue;
+            background-color: aqua;
+            padding: 30px;
+            border: antiquewhite;
+            lighting-color: aqua;
+            background: linear-gradient(to right,#6bcd1b,#0bcdf9);
+
+        }
+        form button{
+            background-color: blueviolet;
+            color: aliceblue;
+            background: linear-gradient(to right,#831bcd,#f9620b);
+            position: relative;
+        }
+        section{
+            color: #000;
+            background-color: rgb(249, 245, 245);
+            padding: 20px;
+            background: linear-gradient(to left,#a8e27e,#91c4df);
+        }
+        hr{
+            size: 1px;
+        }
+        #programming-languages{
+            margin-top: 60px;
+        }
+        #programming-languages.skill{
+            margin-bottom: 20px;
+        }
+        #programming-languages.progress-bar{
+            width: 0;
+            height: 20px;
+            background: linear-gradient(to right,#831bcd,#f9620b);
+            border-radius: 10px;
+        }
+        .main input[type='text']{
+            width: 25%;
+            position: relative;
+        }
+</style>
+</head>
+<body align="center">
+    <hr>
+    <header><h1>my profile</h1></header>
+    <hr>
+    <section>
+        <h3>this is my profile</h3>
+        <p>hii this is triveni samula,in my profile i give less details now i am currently learning frontend web development</p>
+    </section> 
+    <hr>
+    <section id="programming-languages">
+        <h2>Programming Languages</h2>
+        <div class="skill">
+            <p>Javascript</p>
+            <div class="progress-bar" data-progress="80"></div>
+        </div>
+        <div class="skill">
+            <p>HTML</p>
+            <div class="progress-bar" data-progress="90"></div>
+        </div>
+        <div class="skill">
+            <p>CSS</p>
+            <div class="progress-bar" data-progress="60"></div>
+        </div>
+    </section>
+    <hr>  
+    <section>
+        <p>contact me<br>9032813942</p>
+    </section>
+    <hr>    
+    <section>
+        <div class="main">
+        <form>
+            <label>Name:</label>
+            <input type="text"><br><br>
+            <label>email_Id:</label>
+            <input type="text"><br><br>
+            <label>password:</label>
+            <input type="password"><br><br>
+            <label>message:</label>
+            <textarea rows="2%" cols="15%"></textarea><br><br>
+            <input type="button" value="submit">
+        </form>
+        </div>
+    </section>
+</body>
+</html>

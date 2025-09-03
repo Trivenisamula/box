@@ -1,0 +1,26 @@
+<html>
+<head><title>gender</title>
+<script>
+function x()
+{
+var a=document.myform.gender.value;
+switch(a)
+{
+  case 'female':alert("you select female");
+                break;
+  case 'male':alert("you select male');
+               break;
+  default:alert("invalid option");
+}
+}
+</script>
+</head>
+<body align="center" bgcolor="lavender">
+<form name="myform">
+<label>Gender:<input type="radio" name="gender" value=male onclick="x()"/>male</label><br>
+<p><pre>      </pre>
+<input type="radio" name="gender" value="female" onclick="x()"/>female</label>
+</form>
+</body>
+</html>
+ 
