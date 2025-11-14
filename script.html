@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=["summer House","Brick House","Barn House","summer House","Brick House","Barn House","summer House","Brick House"]
+        let images=["https://www.w3schools.com/w3images/house5.jpg","https://www.w3schools.com/w3images/house2.jpg","https://www.w3schools.com/w3images/house3.jpg","https://www.w3schools.com/w3images/house4.jpg","https://www.w3schools.com/w3images/house5.jpg","https://www.w3schools.com/w3images/house2.jpg","https://www.w3schools.com/w3images/house3.jpg","https://www.w3schools.com/w3images/house4.jpg"]
+        let container=document.createElement("div")
+        container.style.display="grid"
+        container.style.gridTemplateColumns="auto auto auto auto"
+        container.style.rowGap="15px"
+        for(let i=0; i<8; i++){
+            let card=document.createElement("div")
+            let title=document.createElement("h1")
+            title.textContent=arr[i]
+            title.style.backgroundColor="black"
+            title.style.color="white"
+            title.style.margin="0px"
+            title.style.fontSize="16px"
+            title.style.width="120px"
+            card.style.background=`url(${images[i]})`
+            card.style.height="23vh"
+            card.style.width="23vw"
+            card.style.backgroundSize="cover"
+            card.style.backgroundRepeat="no-repeat"
+            card.style.margin="25"
+            container.appendChild(card)
+            card.appendChild(title)
+        }
+        document.body.appendChild(container)
+        
+    </script>
+</body>
+</html>

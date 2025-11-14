@@ -1,0 +1,155 @@
+import mysql.connector
+db_connection=mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Triveni17$",
+    database="SBIBank"
+)
+cur=db_connection.cursor()
+def searchCustomer():
+    cur.execute("select users.user_id,users.user_name,accounts.acc_bal,requests.req_type from users left join accounts using(user_id) left join requests using (user_id)")
+    id=int(input("enter searching customer id"))
+    data=cur.fetchall()
+    for i in data:
+        if i[0]==id:
+            print(i)
+def signup():
+    name=input("Enter your name").strip().lower()
+    psd=input("Enter your password").strip().lower()
+    userRole=input("customer/admin")
+    cur.execute("insert into users(user_name,user_pswd,user_role) values(%s,%s,%s)",(name,psd,userRole))
+    db_connection.commit()
+    cur.execute("select * from users where user_name=%s",(name,))
+    data=cur.fetchone()
+    user_id,un,up,urole=data
+    print(user_id,"id")
+    acc_type=input("enter acc type (savings/current)")
+    cur.execute("insert into accounts(user_id,acc_type,acc_bal) values(%s,%s,%s)",(user_id,acc_type,5000))
+    db_connection.commit()
+def check_Bal(user_id):
+    cur.execute("select * from accounts where user_id=%s",(user_id,))
+    mainBal=cur.fetchone()
+    return mainBal
+def withdraw(user_id):
+    amt=int(input("Enter amount to draw"))
+    abc=check_Bal(user_id)
+    acId,userId,accType,main_amt=abc
+    if amt>main_amt:
+        print(f"You are trying to draw {amt} but in your account have {main_amt}")
+    elif amt<=main_amt:
+        cur.execute("update accounts set acc_bal=%s where user_id=%s",(main_amt-amt,user_id))
+        db_connection.commit()
+        cur.execute("select * from accounts where user_id=%s",(user_id,))
+        mainBal=cur.fetchone()
+        acId,userId,accType,main_amt=mainBal
+        print(f"{amt} drawn successfully...",f"main bal {main_amt}")
+def deposit(user_id):
+    depoAmt=int(input("Enter depo Amount"))
+    if depoAmt>0:
+        cur.execute("update accounts set acc_bal=acc_bal+%s where user_id=%s",(depoAmt,user_id))
+        db_connection.commit()
+        print("deposit successfully...")
+    else:
+        print("Deposit amount should be greater than zero")
+def requestRaise(user_id,req_mode):
+    qtAmt=int(input("Enter quoting amount for loan"))
+    cur.execute("insert into requests(user_id,req_type,req_bal) values(%s,%s,%s)",(user_id,req_mode,qtAmt))
+    db_connection.commit()
+def deleteCustomer():
+    delperson=int(input("enter user_id here to delete that customer"))
+    cur.execute("delete from accounts where user_id=%s",(delperson,))
+    cur.execute("delete from requests where user_id=%s",(delperson,))
+    cur.execute("delete from users where user_id=%s",(delperson,))
+    db_connection.commit()
+    print("deleted successfully")
+def viewallRequests():
+    cur.execute("select users.user_name,requests.req_type,requests.req_bal,requests.req_status from users left join requests using (user_id)")
+    allRequests=cur.fetchall()
+    return allRequests
+def managingRequests():
+    allReqs=viewallRequests()
+    print(allReqs)
+    inp=input("enter req_type to fetch pending, rejected,approved")
+    inreq=input("enter req_type to fetch loan,atm_card, check_box, netbanking")
+    for t in allReqs:
+        name,r_type,bal,status=t
+        print(t)
+    if status==inp and r_type==inreq:
+        userName=input("enter person name")
+        cur.execute("select user_id from users where user_name=%s",(userName,))
+        user_details=cur.fetchone()
+        user_id=user_details[0]
+        if userName==t[0]:
+            if bal>10000:
+                status_Updated="Rejected"
+                cur.execute("update requests set req_status=%s where user_id=%s",(status_Updated,user_id))
+                db_connection.commit()
+            else:
+                status_Updated="approved"
+                cur.execute("update requests set req_status=%s where user_id=%s",(status_Updated,user_id))
+                db_connection.commit()
+                print("Approved enjoy with friends")
+def login():
+    name=input("Enter name here")
+    pswd=input("Enter pswd here")
+    role=input("Enter role (customer/admin)")
+    cur.execute("select * from users where user_name=%s",(name,))
+    data=cur.fetchone()
+    user_id,userN,userP,userR=data
+    if userR=="customer" and userP==pswd:
+        print("-----customer menu----")
+        print("1. Withdraw")
+        print("2. Deposit")
+        print("3. CheckBal")
+        print("4. request Raise")
+        choose=input("enter one option here")
+        if choose=="1":
+            withdraw(user_id)
+        if choose=="3":
+            print(check_Bal(user_id))
+        if choose=="2":
+            deposit(user_id)
+        if choose=="4":
+            print("1. Loan")
+            print("2. atm_card")
+            print("3. checkbook")
+            print("4. NetBanking")
+            req_Type=int(input("enter one option from the above"))
+            if req_Type==1:
+                req_mode="loan"
+                requestRaise(user_id,req_mode)
+            if req_Type==2:
+                req_mode="atm_card"
+                requestRaise(user_id,req_mode)
+            if req_Type==3:
+                req_mode="checkbook"
+                requestRaise(user_id,req_mode)
+            if req_Type==4:
+                req_mode="net_banking"
+                requestRaise(user_id,req_mode)
+    if userR=="admin" and userP==pswd:
+        print("----admin Menu----")
+        print("1. Delete Customer")
+        print("2. Search Customer")
+        print("3. view AllRequests")
+        print("4. managing requests")
+        choose=input("Enter option here")
+        if choose=="2":
+            searchCustomer()
+        if choose=="1":
+            deleteCustomer()
+        if choose=="3":
+            print(viewallRequests())
+        if choose=="4":
+            managingRequests()
+print("----SBI Bank Project----")
+print("1. sign up")
+print("2. Login")
+print("3. Exit")
+option=int(input("enter your option"))
+if option==1:
+    signup()
+if option==2:
+    login()
+if option==3:
+    exit

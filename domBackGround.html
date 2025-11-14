@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            margin: 200px;
+            padding-left: 200px;
+            text-align: justify;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click a Button to Change Background Color</h1>
+    <div>
+        <button id="b1" onclick="backgroundred()">Red</button>
+        <button id="b2" onclick="backgroundblue()">Blue</button>
+        <button id="b3" onclick="backgroundgreen()">Green</button>
+        <button id="b4" onclick="backgroundyellow()">Yellow</button>
+        <button id="b5" onclick="reset()">Reset</button>
+    </div>
+    <script>
+        let a=document.createElement("h4")
+        function backgroundred(){
+            document.body.style.backgroundColor="red"
+            a.innerHTML="Current Color: Red"
+            document.body.append(a)
+        }
+        function backgroundblue(){
+            document.body.style.backgroundColor="blue"
+            a.innerHTML="Current Color: blue"
+            document.body.append(a)
+        }
+        function backgroundgreen(){
+            document.body.style.backgroundColor="green"
+            a.innerHTML="Current Color: green"
+            document.body.append(a)
+        }
+        function backgroundyellow(){
+            document.body.style.backgroundColor="yellow"
+            a.innerHTML="Current Color: yellow"
+            document.body.append(a)
+        }
+        function reset(){
+            document.body.style.backgroundColor="white"
+             a.innerHTML=""
+            document.body.append(a)
+        }
+    </script>
+</body>
+</html>

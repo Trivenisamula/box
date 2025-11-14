@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            justify-content: center;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bulb Glowing</h1>
+    <img id="image" src="https://toppng.com/public/uploads/preview/light-bulb-on-off-png-115539402943y50vxr5yi.png">
+    <br>
+    <br>
+    <button onclick="fun1()">switch off</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;<button onclick="fun2()">switch on</button>
+    <script>
+        let image=document.getElementById("image")
+        function fun2(){
+            image.src="https://tse3.mm.bing.net/th/id/OIP.prE2JXqapG1eB-R6J_ZBIgHaHk?rs=1&pid=ImgDetMain&o=7&rm=3"
+        }
+        function fun1(){
+            image.src="https://toppng.com/public/uploads/preview/light-bulb-on-off-png-115539402943y50vxr5yi.png"
+        }
+    </script>
+</body>
+</html>

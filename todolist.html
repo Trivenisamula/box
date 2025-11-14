@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic To-Do List</title>
+</head>
+<style>
+    div{
+      width: 300px;
+      margin: 250px;
+      padding: 50px;
+      padding-left: 90px;
+      border: 2px solid black;
+      border-radius: 5px;
+      background-color: rgb(211, 204, 204);
+    }
+    button{
+      background-color: rgb(2, 190, 253);
+      color: rgb(254, 252, 252);
+      border-color: rgb(14, 14, 14);
+    }
+    #value{
+      border: 2px solid black;
+    }
+    body{
+      padding-left: 230px;
+    }
+</style>
+<body>
+  <div>
+    <h1>ADD TO CART</h1>
+    <input id="value" type="text" placeholder="Enter food item">
+    <button onclick="add()">Add</button>
+    <button onclick="del()">Del</button>
+      <h3 id="display"></h3>
+  </div>
+  <script>
+    let tasks = [];
+    function add() {
+      let task=document.getElementById("value").value;
+      t=task.toUpperCase();
+      if (t) {
+        tasks.push(t);
+        document.getElementById("value").value = ""; 
+        update();
+        
+      }
+    }
+    function del(){
+      if(tasks.length>0){
+        tasks.pop();
+        update();
+      }
+    } 
+    function update(){
+      let r=document.getElementById("display");
+      r.innerHTML = tasks.join("<br>");
+      r.style.color="black"
+      r.style.fontWeight="300"
+      r.style.fontSize="20px"
+    }
+  </script>
+</body>
+</html>

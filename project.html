@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lounge</title>
+  <!-- Font Awesome for icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     *{
@@ -18,23 +19,55 @@
       color: #ccc;
       font-family: 'Times New Roman', Times, serif; 
     }
-    .navbar {
-        padding: 15px 30px;
+
+    /* Navbar */
+    .nav{
+      position: sticky;
+      top:0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 90px;
+      background-color: #080808;
     }
-    .navbar-brand {
-        font-family: 'Playfair Display', serif;
+    .nav1 h3{
+      font-size: 35px;
+      font-style: 'Playfair Display', serif;
+      font-weight: 400;
     }
-    .navbar-nav .nav-link {
-        font-size: 18px;
-        margin: 0 10px;
-        color: #111111;
-        transition: 0.3s;
+    .nav2{
+      display: flex;
+      gap: 30px;
     }
-    .navbar-nav .nav-link.active,
-    .navbar-nav .nav-link:hover {
-        color: #fff;
-        font-weight: bold;
+    .nav2 a{
+      text-decoration: none;
+      color: #777;
+      font-size: 19px;
+      transition: 0.3s;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+    .nav2 a:hover,
+    .nav2 a.active{
+      color: #fff;
+      font-weight: bold;
+    }
+    .nav3 button{
+      background: #1a1a1a;
+      color: #fff;
+      border: none;
+      padding: 20px 30px;
+      border-radius: 30px;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav3 button i{
+      color: #ccc;
+    }
+
+    /* Intro Section */
     .intro{
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -125,7 +158,7 @@
       height: 400px;
     }
     .storyright{
-      margin-top: 100px;
+      margin-top: 300px;
       line-height: 1.5;
       font-size: 20px;
       font-family: Arial, Helvetica, sans-serif;
@@ -178,6 +211,7 @@
       height: 500px;
     }
      .gallery-section {
+      background: #000; /* dark background */
       padding: 100px 90px;
     }
     .gallery-section>p{
@@ -194,11 +228,13 @@
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(4, 1fr); 
-      grid-template-rows: repeat(2, 1fr);    
-      gap: 0; 
+      grid-template-columns: repeat(4, 1fr); /* 4 columns */
+      grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+      gap: 0; /* no space between images */
       width: 100%;
       height: 100%;
+     /* optional, keeps it centered */
+      
     }
     .gallery div {
       position: relative;
@@ -227,36 +263,40 @@
     }
 
     .gallery div:hover::after {
-      background-color:rgb(12, 12, 12, 0.3); 
+      background-color:rgb(12, 12, 12, 0.3); /* overlay */
     }
 
     .gallery div:hover::before {
-      opacity: 2; 
+      opacity: 2; /* show + icon */
     }
 
     .gallery div:hover img {
-      transform: scale(1.05); 
-      opacity: 0.4; 
+      transform: scale(1.05); /* optional zoom effect */
+      opacity: 0.4; /* make transparent */
     }
      .testimonials {
       text-align: center;
       padding: 10px 90px;
       
     }
+
     .testimonials h2 {
       font-size: 50px;
       font-weight: 400;
       margin-bottom: 120px;
     }
+
     .testimonial-container {
       display: flex;
       justify-content: center;
-      gap: 20px; 
+      gap: 20px;
+      
     }
+
     .testimonial {
       background: transparent;
-      max-width: 500px; 
-      flex: 1;          
+      max-width: 500px; /* increase width (try 400–500px) */
+      flex: 1;          /* let them grow evenly inside the flex container */
       text-align: left;
       color: #ddd;
       padding: 20px;  
@@ -300,6 +340,8 @@
       text-align: center;
       margin-top: 100px;
     }
+
+    /* Subscription Box */
     .subscribe-box {
       background: #1a1a1a;
       padding: 50px 120px;
@@ -309,12 +351,14 @@
       flex-wrap: nowrap;
       margin-bottom: 60px;
     }
+
     .subscribe-box p {
       font-size: 25px;
       font-family: 'Times New Roman', Times, serif;
       font-weight: 300;
       color: #a9a8a8;
     }
+
     .subscribe-box input {
       padding: 25px 85px;
       border: none;
@@ -324,6 +368,7 @@
       color: #fff;
       
     }
+
     .subscribe-box button {
       margin: 20px;
       padding: 20px 45px;
@@ -340,6 +385,8 @@
     .subscribe-box button:hover {
       background: #3a8c6d;
     }
+
+    /* Footer Content */
     .footer-container {
       display: flex;
       justify-content: space-around;
@@ -371,11 +418,26 @@
       line-height: 1.6;
       text-decoration: none;
     }
+
+    /* Logo + Socials */
     .footer-logo {
       font-size: 50px;
       font-weight: 300;
       margin-bottom: 15px;
     }
+
+    .social-icons a {
+      color: #fff;
+      font-size: 25px;
+      margin-right: 12px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #4caf84;
+    }
+
+    /* Bottom Bar */
     .footer-bottom {
       font-size: 20px;
       color: #aaa;
@@ -384,14 +446,17 @@
       border-top: 0px solid #222;
       padding-top: 15px;
       display: flex;
-      justify-content: flex-start;  
+      justify-content: flex-start;  /* content sticks to left */
       align-items: center;
     }
+
     .footer-bottom a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
     }
+
+    /* Scroll Top Button */
     .scroll-top {
       position: fixed;
       width: fit-content;
@@ -405,271 +470,29 @@
       cursor: pointer;
       transition: 0.3s;
     }
-    @media (max-width: 992px) {
-    .nav {
-        padding: 10px 30px;
-    }
-    .nav2 {
-        display: none; 
-    }
-    .nav3 {
-        display: none; 
-    }
-    .navbar-toggler {
-        display: block;
-    }
-    .intro {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 40px 30px;
-    }
-    .left h1 {
-        font-size: 90px;
-    }
-    .left .bg-img {
-        display: none;
-    }
-    .right img {
-        width: 100%;
-        height: auto;
-    }
-    .story {
-        grid-template-columns: 1fr;
-        padding: 40px 30px;
-    }
-    .storyleft h2 {
-        font-size: 50px;
-    }
-    .storyright {
-        margin-top: 50px;
-        max-height: none;
-        overflow-y: visible;
-    }
-    .menu {
-        grid-template-columns: 1fr;
-        padding: 40px 30px;
-    }
-    .menuright img {
-        width: 100%;
-        height: auto;
-    }
-    .gallery-section{
-        padding: 40px 30px;
-    }
-    .gallery {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .testimonials {
-        padding: 40px 20px;
-    }
-    .testimonial-container {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        flex-direction: column;
-        align-items: center;
-    }
-    .subscribe-box {
-        padding: 40px 30px;
-    }
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .footer-section {
-          width: 300px;
-          height: 0px;
-          margin-top: 0px; /* remove extra spacing */
-          margin-bottom: 0px;
-          margin-left: 20px;
-          flex: 1 2 150px;
-          padding: 0px 10px;
-    }
-      .footer-bottom {
-          margin-left: 180px;
-          width: 600px;
-          font-size: 12px;
-      }     
-    }
-    /* Mobiles (≤ 576px) */
-    @media (max-width: 576px) {
-        .intro{
-            width:100%;
-            padding: 20px;
-        }
-        .left h1 {
-            font-size: 60px;
-        }
-        .left small{
-            display: grid;
-            flex-direction: column;
-            text-align: justify;
-            font-size: 25px;
-            font-style: italic;
-            color: #aaa;
-            margin-left: 0px;
-        }
-        .storyleft img{
-            margin-top: 50px;
-            width: 280px;
-            height: 300px;
-        }
-        .storyright p{
-            font-size: 15px;
-            margin-top: 10px;
-        }
-        .storyleft h2,
-        .menu h2,
-        .gallery-section h2 {
-            font-size: 40px;
-        }
-        .form-select{
-            font-size: 20px;
-        }
-        .gallery-section {
-            padding: 10px 25px;
-            margin-top: 0px;
-        }
-        .gallery {
-            grid-template-columns: 1fr 1fr;
-        }
-        .testimonial-container {
-          display: grid;
-          grid-template-columns: repeat(1,1fr);
-          flex-direction: column;
-          align-items: center;
-        }
-        .testimonials h2 {
-            font-size: 28px;
-            font-weight: 400;
-            margin-bottom: 10px;
-        }
-        .testimonial p {
-            font-size: 15px;
-            line-height: 1.5;
-            color: #c7c5c5;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .client-info{
-            margin-bottom: 5px;
-        }
-        .client-info img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 0px;
-        }
-         footer {
-            padding: 0px;
-            width: 20px;
-            text-align: center;
-            margin-left: 0px;
-        }
-         .subscribe-box {
-            margin-top: 10px;
-            margin-left: 40px;
-            background: #1a1a1a;
-            padding: 15px 15px;
-            border-radius: 10px;
-            width: 250px;
-            margin-bottom: 50px;
-        }
-        .subscribe-box p {
-            font-size: 15px;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: 300;
-            color: #a9a8a8;
-        }
-        .subscribe-box form{
-            display: grid;
-            grid-template-columns: 1fr;
-            row-gap: 10px;
-        }
-        .subscribe-box input {
-            width: auto;
-            text-align: center;
-            justify-content: center;
-            padding: 10px 10px;
-            border: none;
-            border-radius: 50px;
-            background: #2b2a2a;
-            color: #fff;
-        }
-        .subscribe-box button {
-            margin: 0px;
-            padding: 10px 35px;
-            border: none;
-            background: #2e6d57;
-            color: #fff;
-            font-weight: bold;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: 0.3s;   
-        }
-        .footer-container {
-            margin: 0;
-            padding: 10px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            text-align: start;
-            row-gap: 5px; 
-            width: 100%;
-            height: auto;
-        }
-        .footer-section {
-            width: 300px;
-            height: 0px;
-            margin-top: 0px; 
-            margin-bottom: 0px;
-            flex: 1 1 100px;
-        }
-        .footer-section h3 {
-            margin: 0 0 4px 0; 
-            font-size: 18px;
-        }
-        .footer-section p {
-            margin: 0 0 6px 0; 
-            font-size: 16px;
-            width: 100%;
-            max-width: 100%;
-            line-height: 1.4; 
-        }
-        .footer-logo {
-            font-size: 30px;
-        }
-        .footer-bottom {
-            margin-top: 0px;
-            margin-left: 40px;
-            width: 300px;
-            font-size: 12px;
-        }       
-    }
-</style>
+    
+
+  </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand fs-2 fw-light" href="#top">Lounge.</a>
 
-        <!-- Toggler (Hamburger) -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link active" href="#top">Intro</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
-            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-        </ul>
-        </div>
-        <button class="btn btn-outline-light d-none d-lg-block ms-3">
-        <i class="fas fa-phone"></i> 555-123-3456
-        </button>
+  <!-- Navbar -->
+  <div class="nav">
+    <div class="nav1">
+      <h3>Lounge.</h3>
     </div>
-    </nav>
+    <div class="nav2">
+      <a href="#top" class="active">Intro</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+    </div>
+    <div class="nav3">
+      <button><i class="fas fa-phone"></i> 555-123-3456</button>
+    </div>
+  </div>
+
+  <!-- Intro -->
   <div class="intro" id="top">
     <div class="left">
       <small>Welcome to</small>
@@ -764,10 +587,12 @@
   <section class="testimonials">
     <h2>What Our Clients Say</h2>
     <div class="testimonial-container">
+      
+      <!-- Testimonial 1 -->
       <div class="testimonial">
         <div class="client-info">
           <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Rockefeller">
-          <div class="test">
+          <div>
             <div class="client-name">John Rockefeller</div>
             <div class="client-location">Cleveland, Ohio</div>
           </div>
@@ -776,10 +601,12 @@
           Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum. Laudantium quia consequatur molestias.
         </p>
       </div>
+
+      <!-- Testimonial 2 -->
       <div class="testimonial">
         <div class="client-info">
           <img src="https://themewagon.github.io/Lounge/images/avatars/user-02.jpg" alt="Andrew Carnegie">
-          <div class="test">
+          <div>
             <div class="client-name">Andrew Carnegie</div>
             <div class="client-location">Pittsburgh, Pennsylvania</div>
           </div>
@@ -788,10 +615,12 @@
           Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Voluptatem dignissimos ut ducimus accusantium perspiciatis. Quasi voluptas eius distinctio. Atque eos maxime.
         </p>
       </div>
+
+      <!-- Testimonial 3 -->
       <div class="testimonial">
         <div class="client-info">
           <img src="https://themewagon.github.io/Lounge/images/avatars/user-01.jpg" alt="John Morgan">
-          <div class="test">
+          <div>
             <div class="client-name">John Morgan</div>
             <div class="client-location">New York City</div>
           </div>
@@ -800,10 +629,11 @@
           Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam. Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio. Voluptatem dignissimos ut.
         </p>
       </div>
+      <!-- Testimonial 4 -->
       <div class="testimonial">
         <div class="client-info">
           <img src="https://themewagon.github.io/Lounge/images/avatars/user-06.jpg" alt="John Morgan">
-          <div class="test">
+          <div>
             <div class="client-name">Henry Ford</div>
             <div class="client-location">Dearborn, Michigan</div>
           </div>
@@ -815,6 +645,7 @@
     </div>
   </section>
   <footer>
+    <!-- Subscribe Box -->
     <div class="subscribe-box">
       <p>Subscribe to our mailing list for<br> updates, news, and exclusive offers.</p>
       <form>
@@ -822,26 +653,45 @@
         <button type="submit">Subscribe</button>
       </form>
     </div>
+
+    <!-- Footer Content -->
     <div class="footer-container">
+      <!-- Logo + Social -->
       <div class="footer-section">
         <div class="footer-logo">Lounge.</div>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-telegram"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tripadvisor"></i></a>
+        </div>
       </div>
+
+      <!-- Location -->
       <div class="footer-section">
         <h3>LOCATION</h3>
         <p>456 Elm Street, Los Angeles<br>CA 90001</p>
       </div>
+
+      <!-- Contacts -->
       <div class="footer-section">
         <h3>CONTACTS</h3>
         <p>contact@lounge.com<br>(213) 555-123-3456</p>
       </div>
+
+      <!-- Opening Hours -->
       <div class="footer-section">
         <h3>OPENING HOURS</h3>
         <p>Weekdays: 10:00AM - 9:00PM<br>Weekends: 9:00AM - 10:00PM</p>
       </div>
     </div>
+
+    <!-- Footer Bottom -->
     <div class="footer-bottom">
-       <p>Design by <a href="#">StyleShout</a> Distributed by<a href="#"> ThemeWagon</a></p>
+      ©&nbsp;Lounge&nbsp;2025&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Design &nbsp;by&nbsp;<a href="#">StyleShout</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Distributed &nbsp;by&nbsp;<a href="#">ThemeWagon</a>
     </div>
+
+    <!-- Scroll Top (anchor link) -->
     <a href="#top" class="scroll-top">
       <i class="fas fa-arrow-up"></i>
     </a>
@@ -850,8 +700,10 @@
   // Select all nav links
   const sections = document.querySelectorAll("section, .intro, .story, .menu, .gallery-section");
   const navLinks = document.querySelectorAll(".nav2 a");
+
   window.addEventListener("scroll", () => {
     let current = "";
+
     sections.forEach((section) => {
       const sectionTop = section.offsetTop - 120; // offset for navbar height
       const sectionHeight = section.clientHeight;
@@ -859,6 +711,7 @@
         current = section.getAttribute("id");
       }
     });
+
     navLinks.forEach((link) => {
       link.classList.remove("active");
       if (link.getAttribute("href") === "#" + current) {
