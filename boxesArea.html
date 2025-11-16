@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #red{
+            background-color: red;
+            color: aliceblue;
+        }
+        #green{
+            background-color: green;
+            color: aliceblue;
+        }
+        #blue{
+            background-color: blue;
+            color: aliceblue;
+        }
+        #yellow{
+            background-color: yellow;
+            color: aliceblue;
+        }
+        #pink{
+            background-color: pink;
+            color: aliceblue;
+        }
+        #boxArea div {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input id="red" type="button" onclick="redfun()" value="Red">
+    <input id="green" type="button" onclick="greenfun()" value="Green">
+    <input id="blue" type="button" onclick="bluefun()" value="Blue">
+    <input id="yellow" type="button" onclick="yellowfun()" value="yellow">
+    <input id="pink" type="button" onclick="pinkfun()" value="pink">
+    <input type="button" onclick="clearBoxes()" value="Clear All">
+    <script>
+        let heading_ele=document.createElement("h1")
+        heading_ele.innerHTML="Boxes Area:"
+        document.body.append(heading_ele)
+        let div=document.createElement("div")
+        div.id = "boxArea";
+        document.body.append(div)
+        function redfun(){
+            let red=document.createElement("div")
+            red.style.backgroundColor="red"
+            red.style.width="200px"
+            red.style.height="200px"
+            let del=document.createElement("button")
+            del.textContent="X"
+            red.appendChild(del)
+            del.onclick = function() {
+            red.remove();
+            }
+            div.appendChild(red)
+        }
+        function greenfun(){
+            let green=document.createElement("div")
+            green.style.backgroundColor="green"
+            green.style.width="200px"
+            green.style.height="200px"
+            let del=document.createElement("button")
+            del.textContent="X"
+            green.appendChild(del)
+            del.onclick = function() {
+            green.remove();
+            }
+            div.appendChild(green)
+            
+        }
+        function bluefun(){
+            let blue=document.createElement("div")
+            blue.style.backgroundColor="blue"
+            blue.style.width="200px"
+            blue.style.height="200px"
+            let del=document.createElement("button")
+            del.textContent="X"
+            blue.appendChild(del)
+            del.onclick = function() {
+            blue.remove();
+            }
+            div.appendChild(blue)
+        }
+        function yellowfun(){
+            let yellow=document.createElement("div")
+            yellow.style.backgroundColor="yellow"
+            yellow.style.width="200px"
+            yellow.style.height="200px"
+            let del=document.createElement("button")
+            del.textContent="X"
+            yellow.appendChild(del)
+            del.onclick = function() {
+            yellow.remove();
+            }
+            div.appendChild(yellow)
+        }
+        function pinkfun(){
+            let pink=document.createElement("div")
+            pink.style.backgroundColor="pink"
+            pink.style.width="200px"
+            pink.style.height="200px"
+            let del=document.createElement("button")
+            del.textContent="X"
+            pink.appendChild(del)
+            del.onclick = function() {
+            pink.remove();
+            }
+            div.appendChild(pink)
+        }
+        function clearBoxes(){
+            div.innerHTML="";
+        }
+    </script>
+</body>
+</html>
