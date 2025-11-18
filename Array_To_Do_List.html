@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            
+        }
+        div{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            justify-content:center;
+            align-items: center;
+        }
+        .items{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+        <input type="text" placeholder="Enter your element">
+        <div>
+            <button onclick="add_first()">Add First</button>
+            <button onclick="add_last()">Add Last</button>
+            <button onclick="delete_first()">Delete First</button>
+            <button onclick="delete_last()">Delete Last</button>
+        </div>
+        <div class="items"></div>
+        <script>
+            var items=["apple","banana"]
+            function add_first(){
+                let val=document.getElementsByTagName("input")
+                items.unshift(val[0].value)
+                val[0].value=""
+                display()
+            }
+            function add_last(){
+                let val=document.getElementsByTagName("input")
+                items.push(val[0].value)
+                val[0].value=""
+                display()
+            }
+            function delete_first(){
+                items.shift()
+                let val = document.getElementsByTagName("input")[0];
+                val.value = "";
+                display()
+            }
+            function delete_last(){
+                items.pop()  
+                let val = document.getElementsByTagName("input")[0];
+                val.value = "";
+                display()
+            }
+            let ele=document.getElementsByClassName("items")[0]
+            function display(){
+                ele.innerHTML=""  
+                for(let i=0;i<items.length;i++){
+                    ele.innerHTML+=items[i]+" "
+                }
+            }
+            display()
+        </script>
+</body>
+</html>
